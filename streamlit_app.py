@@ -18,8 +18,17 @@ import update_global_var as ugv
 # if 'credits' not in st.session_state:
 #     st.session_state.credits = 1000
 
+
+from streamlit.server.server import Server
+
+server = Server.get_current()
+
+origins = ["https://neuron.affineanalytics.ai"] 
+
+server.enableCORS(origins=origins, methods=['POST', 'GET'], allow_credentials=True, headers=['Content-Type'])
+
 if st.button("Reduce Credits"):
-  st.redirect("new-page", base="http://localhost:8501")
+  st.redirect("new-page", base="https://neuron.affineanalytics.ai/#/login")
   # st.session_state.credits -= consumed
 
 # st.write('Credits = ', st.session_state.credits)
