@@ -1,5 +1,5 @@
 import global_vars
-# import streamlit as st
+import streamlit as st
 # @st.cache_resource
 # update_global.clear()
 
