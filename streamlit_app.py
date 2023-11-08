@@ -19,6 +19,7 @@ if 'credits' not in st.session_state:
     st.session_state.credits = 1000
 
 if st.button("Reduce Credits"):
+  st.redirect("/new-page", base="http://localhost:8501")
   st.session_state.credits -= consumed
 
 st.write('Credits = ', st.session_state.credits)
