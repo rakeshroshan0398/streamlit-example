@@ -5,16 +5,21 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-def udpateCredits(consumed):
-    st.session_state.credits -= consumed
-    st.session_state.changed = True
+st.write(f'''
+    <a target="_self" href="https://eox.at">
+        <button>
+            Please login via Google
+        </button>
+    </a>
+    ''',
+    unsafe_allow_html=True
+)
 
-if 'credits' not in st.session_state or 'changed' not in st.session_state:
+if 'credits' not in st.session_state:
     st.session_state.credits = 1000
-    st.session_state.changed = False
 
 if st.button("Reduce Credits"):
-  udpateCredits(1)
+  st.session_state.credits -= consumed
 
 st.write('Credits = ', st.session_state.credits)
 # if st.session_state.changed:
