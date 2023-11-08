@@ -5,6 +5,18 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
+# Import SessionState class
+from session_state import get
+
+# Define a function to initialize the session state variables
+def initialize_session_state():
+    return get(my_variable=0)
+
+# Create a session state object
+session_state = initialize_session_state()
+
+st.write(f"my_variable = {session_state.my_variable}")
+
 global_vars.global_var = global_vars.global_var
 # First time default call for initialization 2
 st.write('Count = ', global_vars.global_var)
