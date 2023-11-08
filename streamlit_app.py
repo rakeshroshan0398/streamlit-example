@@ -6,7 +6,7 @@ import global_vars
 import update_global_var as ugv
 
 if 'key' not in st.session_state:
-    st.session_state['key'] = 1000
+    st.session_state['key'] = {}
 
 # st.write(f'key = {st.session_state['key']} and count = {global_vars.global_var}')
 
