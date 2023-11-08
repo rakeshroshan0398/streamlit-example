@@ -8,12 +8,12 @@ import update_global_var as ugv
 if 'key' not in st.session_state:
     st.session_state['key'] = 1000
 
-# st.write(f"key = {st.session_state['key']} and count = {global_vars.global_var}")
+# st.write(f'key = {st.session_state['key']} and count = {global_vars.global_var}')
 
 global_vars.global_var = global_vars.global_var
 # First time default call for initialization 2
 # st.write('Count = ', global_vars.global_var)
-st.write(f"my_variable = {session_state.my_variable} and count = {global_vars.global_var}")
+st.write(f"key = {st.session_state['key']} and count = {global_vars.global_var}")
 
 if st.button('Update Count'):
   ugv.update_global()
