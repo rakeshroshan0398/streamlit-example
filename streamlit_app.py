@@ -5,6 +5,7 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
+ugv.update_global()
 st.write('Count = ', global_vars.global_var)
 
 if st.button('Update Count'):
