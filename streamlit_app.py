@@ -3,8 +3,11 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import global_vars
+import update_global_var as ugv
 
 st.write('Count = ', global_vars.global_var)
+
+ugv.update_global()
 
 """
 # Welcome to Streamlit!
