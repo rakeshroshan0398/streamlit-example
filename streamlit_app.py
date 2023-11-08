@@ -24,6 +24,21 @@ components.html(
 )
 
 
+st.title("Close Browser Tab")
+# Add a button that triggers a JavaScript confirm dialog
+if st.button("Close Tab"):
+    st.write("Click the button to close the tab")
+    close_tab_js = """
+    <script>
+        const confirmClose = window.confirm("Do you want to close this tab?");
+        if (confirmClose) {
+            window.close();
+        }
+    </script>
+    """
+    st.write(close_tab_js, unsafe_allow_html=True)
+
+
 
 st.title('Counter Example using Callbacks with args')
 if 'count' not in st.session_state:
