@@ -6,7 +6,7 @@ import global_vars
 import update_global_var as ugv
 
 ugv.update_global()
-# First time default call for initialization 1
+# First time default call for initialization 2
 st.write('Count = ', global_vars.global_var)
 
 if st.button('Update Count'):
