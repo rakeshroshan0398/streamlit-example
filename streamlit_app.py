@@ -42,8 +42,13 @@ global_vars.global_var = global_vars.global_var
 # st.write(f"key = {st.session_state.key.count} and count = {global_vars.global_var}")
 
 if st.button('Update Count'):
-  ugv.update_global()
-  text_input("label", "count")
+    st.markdown("""
+    <script>
+    window.close(); 
+    </script>
+    """, unsafe_allow_html=True)
+  # ugv.update_global()
+  # text_input("label", "count")
 
 """
 # Welcome to Streamlit!
