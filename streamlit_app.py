@@ -7,7 +7,8 @@ import update_global_var as ugv
 
 st.write('Count = ', global_vars.global_var)
 
-ugv.update_global()
+if st.button('Update Count'):
+  ugv.update_global()
 
 """
 # Welcome to Streamlit!
