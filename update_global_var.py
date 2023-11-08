@@ -5,14 +5,14 @@ import global_vars
 def update_global():
   if global_vars.global_var is None:
     global_vars.global_var = 1000
-    global_vars['refresh'] = False 
+    global_vars.refresh = False 
 
-  delta = global_vars['global_var']
-  global_vars['global_var'] = delta - 1
-  global_vars['refresh'] = True
+  delta = global_vars.global_var
+  global_vars.global_var = delta - 1
+  global_vars.refresh = True
 
-  if global_vars['refresh']:
-      st.write(global_vars['global_var'])
+  if global_vars.refresh:
+      st.write(global_vars.global_var)
       global_vars['refresh'] = False
   # if global_vars.global_var is not None:
   #   global_vars.global_var = global_vars.global_var - 1;
