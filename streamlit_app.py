@@ -16,7 +16,7 @@ if 'credits' not in st.session_state:
 if st.session_state.changed:
   st.write('Credits = ', st.session_state.credits)
   st.session_state.changed = False
-else  
+else:  
   st.write('Credits = ', st.session_state.credits)
 
 if st.button("Reduce Credits"):
