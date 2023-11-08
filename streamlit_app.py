@@ -5,11 +5,13 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-def update_session_state():
-    st.write(st.session_state.my_variable)
+def udpateCredits(consumed):
+    st.session_state.credits -= consumed
 
-my_variable = st.text_input('Enter a value', key='my_variable')
-st.button('Update', on_click=update_session_state)
+if 'credits' not in st.session_state:
+    st.session_state.credits = 1000
+
+st.write('Credits = ', st.session_state.credits)
 
 
 """
