@@ -12,17 +12,12 @@ import streamlit as st
 init_key = "__init_values__"
 
 
-def main():
-    view = st.radio("View", ["view1", "view2"])
-
-    if view == "view1":
-        text_input("Text1", key="text1")
-        "☝️ Enter some text, then click on view2 above"
-    elif view == "view2":
-        "☝️ Now go back to view1 and see if your text is still there"
-
-    st.write(st.session_state)
-
+st.write(st.session_state)
+new_session_state = get_session_state()._state._new_session_state
+for key, value in st.session_state.items():
+    if key in new_session_state or key == init_key:
+        continue
+    st.session_state[init_key][key] = value
 
 def text_input(label, key):
     if init_key not in st.session_state:
@@ -40,19 +35,6 @@ def text_input(label, key):
     return value
 
 
-def ensure_hidden_widgets_loaded():
-    new_session_state = get_session_state()._state._new_session_state
-    for key, value in st.session_state.items():
-        if key in new_session_state or key == init_key:
-            continue
-        st.session_state[init_key][key] = value
-
-
-try:
-    main()
-finally:
-    ensure_hidden_widgets_loaded()
-
 # st.write(f'key = {st.session_state['key']} and count = {global_vars.global_var}')
 
 global_vars.global_var = global_vars.global_var
@@ -62,6 +44,7 @@ global_vars.global_var = global_vars.global_var
 
 if st.button('Update Count'):
   ugv.update_global()
+  text_input("label", key = 100)
 
 """
 # Welcome to Streamlit!
