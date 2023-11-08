@@ -1,3 +1,4 @@
 import global_vars
 
-global_vars.global_var = 999
+def update_global:
+  global_vars.global_var = 999
