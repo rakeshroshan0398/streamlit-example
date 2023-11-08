@@ -8,11 +8,12 @@ import update_global_var as ugv
 def on_change():
     st.write(st.session_state['value'])
 
-st.session_state['value'] = 1000  
+st.session_state['value'] = 0  
 st.session_state.on_change(on_change)
+st.session_state['value'] = 1000
 
 if st.button('Update Value'):
-  st.session_state['value'] += 1
+  st.session_state['value'] -= 1
   # ugv.update_global()
   # text_input("label", "count")
 
