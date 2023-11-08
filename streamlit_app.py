@@ -5,55 +5,67 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-# st.write(f'''
-#     <a target="_self" href="https://eox.at">
-#         <button>
-#             Please login via Google
-#         </button>
-#     </a>
-#     ''',
-#     unsafe_allow_html=True
-# )
+st.title('Counter Example using Callbacks with args')
+if 'count' not in st.session_state:
+    st.session_state.count = 100
 
-# if 'credits' not in st.session_state:
-#     st.session_state.credits = 1000
+def decrement_counter(decrement_value):
+    st.session_state.count -= decrement_value
 
+increment = st.button('Increment', on_click=decrement_counter,
+    args=(1, ))
 
-from streamlit.web.server import Server
+st.write('Count = ', st.session_state.count)
 
-server = Server.get_current()
+# # st.write(f'''
+# #     <a target="_self" href="https://eox.at">
+# #         <button>
+# #             Please login via Google
+# #         </button>
+# #     </a>
+# #     ''',
+# #     unsafe_allow_html=True
+# # )
 
-origins = ["https://neuron.affineanalytics.ai"] 
-
-server.enableCORS(origins=origins, methods=['POST', 'GET'], allow_credentials=True, headers=['Content-Type'])
-
-if st.button("Reduce Credits"):
-  st.redirect("new-page", base="https://neuron.affineanalytics.ai/#/login")
-  # st.session_state.credits -= consumed
-
-# st.write('Credits = ', st.session_state.credits)
-# if st.session_state.changed:
-#   st.write('Credits = ', st.session_state.credits)
-#   st.session_state.changed = False
-# else:  
-#   st.write('Credits = ', st.session_state.credits)
+# # if 'credits' not in st.session_state:
+# #     st.session_state.credits = 1000
 
 
+# from streamlit.web.server import Server
 
-st.title("Change Browser Tab URL")
+# server = Server.get_current()
 
-# JavaScript code to change the URL
-javascript_code = """
-<script>
-    // Change the URL without reloading the page
-    window.history.pushState({}, "", "/new-url");
-</script>
-"""
+# origins = ["https://neuron.affineanalytics.ai"] 
 
-# Add a button to trigger the JavaScript code
-if st.button("Change URL"):
-    st.write("Click the button to change the URL")
-    st.write(javascript_code, unsafe_allow_html=True)
+# server.enableCORS(origins=origins, methods=['POST', 'GET'], allow_credentials=True, headers=['Content-Type'])
+
+# if st.button("Reduce Credits"):
+#   st.redirect("new-page", base="https://neuron.affineanalytics.ai/#/login")
+#   # st.session_state.credits -= consumed
+
+# # st.write('Credits = ', st.session_state.credits)
+# # if st.session_state.changed:
+# #   st.write('Credits = ', st.session_state.credits)
+# #   st.session_state.changed = False
+# # else:  
+# #   st.write('Credits = ', st.session_state.credits)
+
+
+
+# st.title("Change Browser Tab URL")
+
+# # JavaScript code to change the URL
+# javascript_code = """
+# <script>
+#     // Change the URL without reloading the page
+#     window.history.pushState({}, "", "/new-url");
+# </script>
+# """
+
+# # Add a button to trigger the JavaScript code
+# if st.button("Change URL"):
+#     st.write("Click the button to change the URL")
+#     st.write(javascript_code, unsafe_allow_html=True)
 
 """
 # Welcome to Streamlit!
