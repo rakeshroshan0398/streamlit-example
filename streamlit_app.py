@@ -13,14 +13,16 @@ if 'credits' not in st.session_state or 'changed' not in st.session_state:
     st.session_state.credits = 1000
     st.session_state.changed = False
 
-if st.session_state.changed:
-  st.write('Credits = ', st.session_state.credits)
-  st.session_state.changed = False
-else:  
-  st.write('Credits = ', st.session_state.credits)
-
 if st.button("Reduce Credits"):
   udpateCredits(1)
+
+st.write('Credits = ', st.session_state.credits)
+# if st.session_state.changed:
+#   st.write('Credits = ', st.session_state.credits)
+#   st.session_state.changed = False
+# else:  
+#   st.write('Credits = ', st.session_state.credits)
+
 
 """
 # Welcome to Streamlit!
