@@ -5,64 +5,16 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-from time import sleep
-from streamlit.runtime.state import get_session_state
-import streamlit as st
+def on_change():
+    st.write(st.session_state['value'])
 
-init_key = "__init_values__"
+st.session_state['value'] = 1000  
+st.session_state.on_change(on_change)
 
-st.write(st.session_state)
-new_session_state = get_session_state()._state._new_session_state
-for key, value in st.session_state.items():
-    if key in new_session_state or key == init_key:
-        continue
-    st.session_state[init_key][key] = value
-
-def text_input(label, key):
-    if init_key not in st.session_state:
-        st.session_state[init_key] = {}
-    initial_values = st.session_state[init_key]
-    try:
-        value = initial_values[key]
-    except KeyError:
-        value = st.session_state.get(key, "")
-        initial_values[key] = value
-
-    value = st.text_input(label, value=value)
-
-    st.session_state[key] = value
-    return value
-
-
-# st.write(f'key = {st.session_state['key']} and count = {global_vars.global_var}')
-
-global_vars.global_var = global_vars.global_var
-# First time default call for initialization 2
-# st.write('Count = ', global_vars.global_var)
-# st.write(f"key = {st.session_state.key.count} and count = {global_vars.global_var}")
-
-if st.button('Update Count'):
-    st.markdown("""
-    <script>
-    window.close(); 
-    </script>
-    """, unsafe_allow_html=True)
+if st.button('Update Value'):
+  st.session_state['value'] += 1
   # ugv.update_global()
   # text_input("label", "count")
-
-import streamlit as st
-
-st.title("Close Browser Tab")
-
-# Add a button that triggers JavaScript to close the tab
-if st.button("Close Tab"):
-    st.write("Click the button to close the tab")
-    close_tab_js = """
-    <script>
-        window.close();
-    </script>
-    """
-    st.write(close_tab_js, unsafe_allow_html=True)
 
 
 """
