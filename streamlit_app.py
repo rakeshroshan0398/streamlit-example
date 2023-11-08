@@ -11,14 +11,7 @@ import streamlit.components.v1 as components
 # bootstrap 4 collapse example
 components.html(
     """
-  <p>Click the button to close this tab:</p>
-  <button onclick="confirmClose()">Close Tab</button>
 
-  <script>
-    function confirmClose() {
-      window.open("https://www.w3schools.com/", "_blank");
-    }
-  </script>
     """,
     height=100,
 )
