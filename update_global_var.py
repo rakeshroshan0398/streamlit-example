@@ -1,7 +1,8 @@
-import streamlit as st
-import global_vars
-
+# import streamlit as st
 # @st.cache_resource
+# import global_vars
+# update_global.clear()
+
 def update_global():
   # if global_vars.global_var is None:
   #   global_vars.global_var = 1000
@@ -18,5 +19,4 @@ def update_global():
     global_vars.global_var = global_vars.global_var - 1;
   else:
     global_vars.global_var = 1000
-  # update_global.clear()
 
