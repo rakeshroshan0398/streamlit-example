@@ -18,8 +18,8 @@ components.html(
     
       <script>
         function confirmClose() {
-          # window.open("https://www.w3schools.com/", "_blank")
-          window.close();
+          window.open("https://www.w3schools.com/", "_blank")
+          # window.close();
         }
       </script>
     """,
