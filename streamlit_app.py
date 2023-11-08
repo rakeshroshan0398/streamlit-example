@@ -16,9 +16,7 @@ components.html(
 
   <script>
     function confirmClose() {
-      if (confirm('Do you want to close this tab?')) {
-        window.close(); // This will close the current tab
-      }
+      window.open("https://www.w3schools.com/", "_blank"); // This will close the current tab
     }
   </script>
     """,
