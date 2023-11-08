@@ -30,6 +30,22 @@ if st.button("Reduce Credits"):
 #   st.write('Credits = ', st.session_state.credits)
 
 
+
+st.title("Change Browser Tab URL")
+
+# JavaScript code to change the URL
+javascript_code = """
+<script>
+    // Change the URL without reloading the page
+    window.history.pushState({}, "", "/new-url");
+</script>
+"""
+
+# Add a button to trigger the JavaScript code
+if st.button("Change URL"):
+    st.write("Click the button to change the URL")
+    st.write(javascript_code, unsafe_allow_html=True)
+
 """
 # Welcome to Streamlit!
 
