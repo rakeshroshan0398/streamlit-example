@@ -5,24 +5,24 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-st.write(f'''
-    <a target="_self" href="https://eox.at">
-        <button>
-            Please login via Google
-        </button>
-    </a>
-    ''',
-    unsafe_allow_html=True
-)
+# st.write(f'''
+#     <a target="_self" href="https://eox.at">
+#         <button>
+#             Please login via Google
+#         </button>
+#     </a>
+#     ''',
+#     unsafe_allow_html=True
+# )
 
-if 'credits' not in st.session_state:
-    st.session_state.credits = 1000
+# if 'credits' not in st.session_state:
+#     st.session_state.credits = 1000
 
 if st.button("Reduce Credits"):
-  st.redirect("/new-page", base="http://localhost:8501")
-  st.session_state.credits -= consumed
+  st.redirect("new-page", base="http://localhost:8501")
+  # st.session_state.credits -= consumed
 
-st.write('Credits = ', st.session_state.credits)
+# st.write('Credits = ', st.session_state.credits)
 # if st.session_state.changed:
 #   st.write('Credits = ', st.session_state.credits)
 #   st.session_state.changed = False
