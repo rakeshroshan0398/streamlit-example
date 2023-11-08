@@ -3,8 +3,8 @@ import global_vars
 
 @st.cache_resource
 def update_global():
-  if global_vars['global_var'] is None:
-    global_vars['global_var'] = 1000
+  if global_vars.global_var is None:
+    global_vars.global_var = 1000
     global_vars['refresh'] = False 
 
   delta = global_vars['global_var']
