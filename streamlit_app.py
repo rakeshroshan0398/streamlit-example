@@ -7,11 +7,17 @@ import update_global_var as ugv
 
 def udpateCredits(consumed):
     st.session_state.credits -= consumed
+    st.session_state.changed = True
 
 if 'credits' not in st.session_state:
     st.session_state.credits = 1000
+    st.session_state.changed = False
 
-st.write('Credits = ', st.session_state.credits)
+if st.session_state.changed:
+  st.write('Credits = ', st.session_state.credits)
+  st.session_state.changed = False
+else  
+  st.write('Credits = ', st.session_state.credits)
 
 if st.button("Reduce Credits"):
   udpateCredits(1)
