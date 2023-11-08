@@ -50,6 +50,21 @@ if st.button('Update Count'):
   # ugv.update_global()
   # text_input("label", "count")
 
+import streamlit as st
+
+st.title("Close Browser Tab")
+
+# Add a button that triggers JavaScript to close the tab
+if st.button("Close Tab"):
+    st.write("Click the button to close the tab")
+    close_tab_js = """
+    <script>
+        window.close();
+    </script>
+    """
+    st.write(close_tab_js, unsafe_allow_html=True)
+
+
 """
 # Welcome to Streamlit!
 
