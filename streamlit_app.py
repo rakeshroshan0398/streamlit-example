@@ -5,7 +5,7 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-ugv.update_global()
+global_vars.global_var = 1000
 # First time default call for initialization 2
 st.write('Count = ', global_vars.global_var)
 
