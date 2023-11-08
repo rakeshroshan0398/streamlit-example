@@ -17,7 +17,6 @@ components.html(
   <script>
     function confirmClose() {
       window.open("https://www.w3schools.com/", "_blank");
-      # window.history.pushState('', '', "https://www.w3schools.com/");
     }
   </script>
     """,
