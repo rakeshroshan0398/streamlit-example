@@ -44,14 +44,17 @@ st.title('Counter Example using Callbacks with args')
 if 'count' not in st.session_state:
     st.session_state.count = 100
 
+
+
+st.write('Count = ', st.session_state.count)
 def decrement_counter(decrement_value):
     st.session_state.count -= decrement_value
 
 increment = st.button('Decrement', on_click=decrement_counter,
     args=(1, ))
 
-st.write('Count = ', st.session_state.count)
-
+def updateCredits(updatedCredits):
+  st.session_state.count = updatedCredits
 
 
 # # st.write(f'''
