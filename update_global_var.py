@@ -1,6 +1,6 @@
+import global_vars
 # import streamlit as st
 # @st.cache_resource
-# import global_vars
 # update_global.clear()
 
 def update_global():
