@@ -11,7 +11,6 @@ import streamlit as st
 
 init_key = "__init_values__"
 
-
 st.write(st.session_state)
 new_session_state = get_session_state()._state._new_session_state
 for key, value in st.session_state.items():
@@ -44,7 +43,7 @@ global_vars.global_var = global_vars.global_var
 
 if st.button('Update Count'):
   ugv.update_global()
-  text_input("label", key = "count")
+  text_input("label", "count")
 
 """
 # Welcome to Streamlit!
