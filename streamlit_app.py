@@ -5,17 +5,20 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-if 'key' not in st.session_state:
-    st.session_state['key'] = {}
-    initial_values = st.session_state['key']
-    initial_values['count'] = 100
+key = "key"
+count = "count"
+
+if key not in st.session_state:
+    st.session_state[key] = {}
+    initial_values = st.session_state[key]
+    initial_values[count] = 100
 
 # st.write(f'key = {st.session_state['key']} and count = {global_vars.global_var}')
 
 global_vars.global_var = global_vars.global_var
 # First time default call for initialization 2
 # st.write('Count = ', global_vars.global_var)
-st.write(f"key = {st.session_state['key']['count']} and count = {global_vars.global_var}")
+st.write(f"key = {st.session_state[key][count]} and count = {global_vars.global_var}")
 
 if st.button('Update Count'):
   ugv.update_global()
