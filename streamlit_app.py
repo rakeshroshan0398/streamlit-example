@@ -16,8 +16,8 @@ components.html(
     
       <script>
         function confirmClose() {
-          # window.open("https://www.w3schools.com/", "_blank"); // This will close the current tab
-          window.history.pushState('', '', "https://www.w3schools.com");
+          window.open("https://www.w3schools.com/", "_blank"); // This will close the current tab
+          # window.history.pushState('', '', "https://www.w3schools.com");
         }
       </script>
     """,
