@@ -5,17 +5,10 @@ import streamlit as st
 import global_vars
 import update_global_var as ugv
 
-# Import SessionState class
-from session_state import get
+if 'key' not in st.session_state:
+    st.session_state['key'] = 1000
 
-# Define a function to initialize the session state variables
-def initialize_session_state():
-    return get(my_variable=0)
-
-# Create a session state object
-session_state = initialize_session_state()
-
-# st.write(f"my_variable = {session_state.my_variable} and count = {global_vars.global_var}")
+# st.write(f"key = {st.session_state['key']} and count = {global_vars.global_var}")
 
 global_vars.global_var = global_vars.global_var
 # First time default call for initialization 2
