@@ -13,7 +13,7 @@ def update_global():
 
   if global_vars.refresh:
       st.write(global_vars.global_var)
-      global_vars['refresh'] = False
+      global_vars.refresh = False
   # if global_vars.global_var is not None:
   #   global_vars.global_var = global_vars.global_var - 1;
   # else:
