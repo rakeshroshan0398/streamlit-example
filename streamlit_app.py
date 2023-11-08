@@ -19,7 +19,7 @@ import update_global_var as ugv
 #     st.session_state.credits = 1000
 
 
-from streamlit.server.server import Server
+from streamlit.web.server import Server
 
 server = Server.get_current()
 
