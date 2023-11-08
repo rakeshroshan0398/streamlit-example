@@ -9,7 +9,7 @@ def udpateCredits(consumed):
     st.session_state.credits -= consumed
     st.session_state.changed = True
 
-if 'credits' not in st.session_state:
+if 'credits' not in st.session_state or 'changed' not in st.session_state:
     st.session_state.credits = 1000
     st.session_state.changed = False
 
