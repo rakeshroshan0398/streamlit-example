@@ -1,3 +1,4 @@
+import streamlit as st
 import global_vars
 
 @st.cache_resource
