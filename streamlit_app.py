@@ -12,6 +12,7 @@ if key not in st.session_state:
     st.session_state[key] = {}
     initial_values = st.session_state[key]
     initial_values[count] = 100
+print(st.session_state.key.count)
 
 # st.write(f'key = {st.session_state['key']} and count = {global_vars.global_var}')
 
