@@ -19,4 +19,6 @@ def update_global():
     global_vars.global_var = global_vars.global_var - 1;
   else:
     global_vars.global_var = 1000
+  delta = st.session_state['key']
+  st.session_state['key'] = delta - 1
 
