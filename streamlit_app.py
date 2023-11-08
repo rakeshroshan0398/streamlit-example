@@ -13,6 +13,8 @@ if 'credits' not in st.session_state:
 
 st.write('Credits = ', st.session_state.credits)
 
+st.button('Reduce Credits'):
+  udpateCredits(1)
 
 """
 # Welcome to Streamlit!
