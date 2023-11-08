@@ -44,7 +44,7 @@ global_vars.global_var = global_vars.global_var
 
 if st.button('Update Count'):
   ugv.update_global()
-  text_input("label", key = 100)
+  text_input("label", key = "count")
 
 """
 # Welcome to Streamlit!
