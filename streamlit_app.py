@@ -12,14 +12,15 @@ import streamlit.components.v1 as components
 components.html(
     """
     <p>Click the button to close this tab:</p>
-      <button onclick="confirmClose()">Close Tab</button>
-    
-      <script>
-        function confirmClose() {
-          window.open("https://www.w3schools.com/", "_blank")
-          # window.close();
-        }
-      </script>
+  <button onclick="confirmClose()">Close Tab</button>
+
+  <script>
+    function confirmClose() {
+      if (confirm('Do you want to close this tab?')) {
+        window.close(); // This will close the current tab
+      }
+    }
+  </script>
     """,
     height=100,
 )
