@@ -4,10 +4,10 @@ import pandas as pd
 import streamlit as st
 import global_vars
 
+st.write('Count = ', global_vars.global_var)
+
 """
 # Welcome to Streamlit!
-
-st.write('Count = ', global_vars.global_var)
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:.
 If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
