@@ -15,11 +15,12 @@ def initialize_session_state():
 # Create a session state object
 session_state = initialize_session_state()
 
-st.write(f"my_variable = {session_state.my_variable}")
+# st.write(f"my_variable = {session_state.my_variable} and count = {global_vars.global_var}")
 
 global_vars.global_var = global_vars.global_var
 # First time default call for initialization 2
-st.write('Count = ', global_vars.global_var)
+# st.write('Count = ', global_vars.global_var)
+st.write(f"my_variable = {session_state.my_variable} and count = {global_vars.global_var}")
 
 if st.button('Update Count'):
   ugv.update_global()
