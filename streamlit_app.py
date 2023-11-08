@@ -12,7 +12,7 @@ if 'count' not in st.session_state:
 def decrement_counter(decrement_value):
     st.session_state.count -= decrement_value
 
-increment = st.button('Increment', on_click=decrement_counter,
+increment = st.button('Decrement', on_click=decrement_counter,
     args=(1, ))
 
 st.write('Count = ', st.session_state.count)
